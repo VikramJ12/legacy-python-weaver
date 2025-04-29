@@ -21,13 +21,13 @@ const MigrationControls = ({ onMigrate }: MigrationControlsProps) => {
           </Button>
           
           <div className="flex gap-2">
-            <Button variant="outline" size="icon" title="Run code">
+            <Button variant="outline" size="icon" title="Run code" className="dark:border-gray-700 dark:hover:bg-gray-700">
               <Play size={18} />
             </Button>
-            <Button variant="outline" size="icon" title="Reset">
+            <Button variant="outline" size="icon" title="Reset" className="dark:border-gray-700 dark:hover:bg-gray-700">
               <RefreshCw size={18} />
             </Button>
-            <Button variant="outline" size="icon" title="Download Python code">
+            <Button variant="outline" size="icon" title="Download Python code" className="dark:border-gray-700 dark:hover:bg-gray-700">
               <Download size={18} />
             </Button>
           </div>

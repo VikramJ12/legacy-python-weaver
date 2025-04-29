@@ -19,13 +19,13 @@ const CodeEditor = ({
 }: CodeEditorProps) => {
   return (
     <div className="w-full relative" style={{ minHeight: height }}>
-      <div className="absolute top-2 right-2 z-10 bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded">
+      <div className="absolute top-2 right-2 z-10 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-2 py-1 rounded">
         {language}
       </div>
       <Textarea
         value={code}
         onChange={(e) => setCode && setCode(e.target.value)}
-        className="font-mono text-sm w-full h-full p-4"
+        className="font-mono text-sm w-full h-full p-4 dark:bg-gray-900 dark:text-gray-100"
         style={{ 
           minHeight: height,
           resize: "vertical",

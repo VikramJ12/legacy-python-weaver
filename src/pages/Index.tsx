@@ -7,6 +7,7 @@ import { toast } from '@/components/ui/sonner';
 import CodeEditor from '@/components/CodeEditor';
 import ASTViewer from '@/components/ASTViewer';
 import MigrationControls from '@/components/MigrationControls';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const Index = () => {
   const [cCode, setCCode] = useState<string>('// Enter your C code here\n#include <stdio.h>\n\nint main() {\n  printf("Hello, world!\\n");\n  return 0;\n}');
@@ -25,12 +26,15 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4 md:p-6">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         <Card className="mb-6">
-          <CardHeader>
-            <CardTitle className="text-2xl md:text-3xl">Legacy Code Migration Engine</CardTitle>
-            <CardDescription>Migrate procedural C code to object-oriented Python</CardDescription>
+          <CardHeader className="flex flex-row items-center justify-between">
+            <div>
+              <CardTitle className="text-2xl md:text-3xl">Legacy Code Migration Engine</CardTitle>
+              <CardDescription>Migrate procedural C code to object-oriented Python</CardDescription>
+            </div>
+            <ThemeToggle />
           </CardHeader>
         </Card>
 
@@ -82,7 +86,7 @@ const Index = () => {
                     <CardTitle className="text-lg">Abstract Syntax Tree (AST)</CardTitle>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <div className="border rounded-md h-[600px] bg-white">
+                    <div className="border rounded-md h-[600px] bg-white dark:bg-gray-800">
                       <ASTViewer code={cCode} />
                     </div>
                   </CardContent>
@@ -103,15 +107,15 @@ const Index = () => {
                     <h3 className="text-sm font-medium mb-2">Migration Options</h3>
                     <div className="space-y-2">
                       <div className="flex items-center space-x-2">
-                        <input type="checkbox" id="preserveComments" className="rounded" defaultChecked />
+                        <input type="checkbox" id="preserveComments" className="rounded dark:bg-gray-800" defaultChecked />
                         <label htmlFor="preserveComments">Preserve comments</label>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <input type="checkbox" id="generateDocs" className="rounded" defaultChecked />
+                        <input type="checkbox" id="generateDocs" className="rounded dark:bg-gray-800" defaultChecked />
                         <label htmlFor="generateDocs">Generate docstrings</label>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <input type="checkbox" id="useTyping" className="rounded" defaultChecked />
+                        <input type="checkbox" id="useTyping" className="rounded dark:bg-gray-800" defaultChecked />
                         <label htmlFor="useTyping">Use Python type hints</label>
                       </div>
                     </div>
@@ -119,7 +123,7 @@ const Index = () => {
                   
                   <div>
                     <h3 className="text-sm font-medium mb-2">Python Version</h3>
-                    <select className="w-full p-2 border rounded-md">
+                    <select className="w-full p-2 border rounded-md dark:bg-gray-800 dark:border-gray-700">
                       <option>Python 3.12</option>
                       <option>Python 3.11</option>
                       <option>Python 3.10</option>
@@ -129,7 +133,7 @@ const Index = () => {
                   
                   <div>
                     <h3 className="text-sm font-medium mb-2">Code Style</h3>
-                    <select className="w-full p-2 border rounded-md">
+                    <select className="w-full p-2 border rounded-md dark:bg-gray-800 dark:border-gray-700">
                       <option>PEP 8</option>
                       <option>Google Style</option>
                       <option>Black</option>
@@ -153,7 +157,7 @@ const Index = () => {
                 <CardTitle className="text-lg">Migration History</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-sm">
+                <div className="text-sm dark:text-gray-300">
                   No previous migrations found.
                 </div>
               </CardContent>
