@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -9,7 +8,7 @@ import ASTViewer from '@/components/ASTViewer';
 import MigrationControls from '@/components/MigrationControls';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import PythonifyLogo from '@/components/PythonifyLogo';
-import { RocketIcon, Zap } from 'lucide-react';
+import { RocketIcon, Zap, Code } from 'lucide-react';
 
 const Index = () => {
   const [cCode, setCCode] = useState<string>('// Enter your C code here\n#include <stdio.h>\n\nint main() {\n  printf("Hello, world!\\n");\n  return 0;\n}');
