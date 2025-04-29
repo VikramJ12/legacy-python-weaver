@@ -43,13 +43,13 @@ const CodeEditor = ({
   // Show highlighted code for read-only mode or when not editing
   if (readOnly) {
     return (
-      <div className="w-full relative" style={{ minHeight: height }}>
+      <div className="w-full relative transition-all duration-300" style={{ minHeight: height }}>
         <div className="absolute top-2 right-2 z-10 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-2 py-1 rounded">
           {language}
         </div>
         <pre
           ref={preRef}
-          className="font-mono text-sm w-full h-full p-4 whitespace-pre-wrap break-all overflow-auto rounded-md border border-input dark:bg-gray-900 dark:text-gray-100"
+          className="font-mono text-sm w-full h-full p-4 whitespace-pre-wrap break-all overflow-auto rounded-md border border-input dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300"
           style={{ 
             minHeight: height,
             resize: "vertical",
@@ -64,14 +64,14 @@ const CodeEditor = ({
 
   // For editable mode, use a textarea with a pre element overlay
   return (
-    <div className="w-full relative" style={{ minHeight: height }}>
-      <div className="absolute top-2 right-2 z-10 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-2 py-1 rounded">
+    <div className="w-full relative transition-all duration-300" style={{ minHeight: height }}>
+      <div className="absolute top-2 right-2 z-10 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-2 py-1 rounded transition-colors duration-300">
         {language}
       </div>
       <Textarea
         value={code}
         onChange={handleChange}
-        className="font-mono text-sm w-full h-full p-4 absolute top-0 left-0 z-0 bg-transparent dark:text-transparent caret-gray-900 dark:caret-white"
+        className="font-mono text-sm w-full h-full p-4 absolute top-0 left-0 z-0 bg-transparent dark:text-transparent caret-gray-900 dark:caret-white transition-colors duration-300"
         style={{ 
           minHeight: height,
           resize: "vertical",
@@ -85,7 +85,7 @@ const CodeEditor = ({
       <pre
         ref={preRef}
         aria-hidden="true"
-        className="font-mono text-sm w-full h-full p-4 pointer-events-none whitespace-pre-wrap break-all overflow-auto rounded-md border border-input dark:bg-gray-900"
+        className="font-mono text-sm w-full h-full p-4 pointer-events-none whitespace-pre-wrap break-all overflow-auto rounded-md border border-input dark:bg-gray-900 transition-colors duration-300"
         style={{ 
           minHeight: height,
           resize: "vertical",
